@@ -1,0 +1,230 @@
+<div class="container">
+    <div class="row text-center">
+        
+        <h2 class="mt-5 " style="width: 450px; margin: 10px 330px 20px; line-height: 2px;border-bottom: 1px solid black;text-align: center;">
+          <span style="background: white;padding: 0 10px;">BABY PHOTOSHOOT</span>
+        </h2>
+        <h3 class="mt-4" style="font-family: 'My Soul', cursive;font-weight: 200px;">
+        We Make The Best  MEmories Ever
+        </h3>
+    </div>
+<div class=" mt-5">
+    <p>This is Dummy Data: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus sed similique nesciunt quia fuga. Qui numquam nisi cum atque deserunt, mollitia, magni impedit beatae eaque commodi dolore iure harum ipsam Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae cum doloremque, repudiandae dolor modi velit fuga ipsa consequatur optio saepe voluptas, asperiores facere tenetur? Illum, corrupti. Aliquid, reprehenderit rerum!</p>
+</div>
+<!-- IMAGES -->
+<div class=" mt-4 d-flex " style="gap: 10px;">
+    <img width="280px"   src="https://canvasandpeach.co.uk/wp-content/uploads/2020/04/Glasgow-Newborn-Photographer-20-1024x682.jpg" alt="">
+
+    <img width="280px"  src="https://static.wixstatic.com/media/3d1a9d_b9a10dfb51214122a3f8c6139c4e874a~mv2_d_4323_3170_s_4_2.jpg/v1/fill/w_640,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/3d1a9d_b9a10dfb51214122a3f8c6139c4e874a~mv2_d_4323_3170_s_4_2.jpg" alt="">
+
+    
+    <img width="280px"  src="https://images.squarespace-cdn.com/content/v1/57854fc0d1758ebdc28078a4/1675176298643-7X39V4CDLOBUGSPJMWQI/Spring_peachSNEAKPEEK.jpg?format=2500w" alt="">
+
+    <img width="280px"  src="https://images.squarespace-cdn.com/content/v1/5ccecedd67713500010d87c3/1624798635145-8KNC4TNC5JTUX08VI89J/newbornphoto.jpg" alt="">
+
+</div>
+<div class="container mt-5">
+
+   <div class="row mt-5"> 
+  <div class="content text-center mt-5">
+    <h4 class="mt-5 text-center" style="width: 450px; margin: 10px 330px 20px; line-height: 2px;border-bottom: 1px solid black;text-align: center;">
+        <span style="background: white;padding: 0 10px;">BABY SHOOT BOOKING</span>
+      </h4>
+      <h3 class="text-center mt-4" style="font-family: 'My Soul', cursive;font-weight: 200px;">
+     Explore Your Best Moments With Our Team 
+      </h3>
+    </div>
+    </div>
+
+   <div class="row mt-5 "  >
+    <div class="col-7" >
+        <form [formGroup]="newbornBookForm"
+        class="border rounded p-5" style="background-color: rgb(188, 185, 185);">
+        
+            <h3 class="text-center">NewBorn Baby Shoot</h3>
+            <!-- <h5 class="text-center">Baby Name:</h5> -->
+            <div class="input-boxes  d-flex mt-4">
+              <div class="col-auto">
+                <label style="margin-left: 10rem;">BabyName:</label>
+              </div>
+              <div class="input-box col-auto" id="baby">
+                <input style="border:none;background-color:rgb(188, 185, 185) ;" type="text" placeholder="Enter your name" required
+                name="babyname" formControlName="babyname">
+              </div>
+              </div>
+      
+           <div class="row mt-4">
+            <!-- name -->
+                    <div class="col-auto">
+                      <label >Name:</label>
+                    </div>
+                    <div class="col-auto "  style="width: 430px;margin-left: 50px;">
+                      <input type="text"   class="form-control" name="username" formControlName="username" required>
+                    </div>
+                    <!-- number -->
+                    <div class="col-auto mt-2">
+                        <label >Number:</label>
+                      </div>
+                      <div class="col-auto mt-2" style="width: 430px;margin-left: 33px;">
+                        <input type="text"  class="form-control" name="mobile" formControlName="mobile" >
+                    </div>
+                    <div *ngIf="newbornBookForm.get('mobile')?.errors &&  this.newbornBookForm.get('mobile')?.touched"
+                    class="text-danger " style="margin-left:8rem ;">Please Enter Valid Phone Number</div>
+                      <!-- email -->
+                    <div class="col-auto mt-2">
+                        <label >Email:</label>
+                      </div>
+                      <div class="col-auto mt-2" style="width: 430px;margin-left: 50px;">
+                        <input type="text"  class="form-control" name="email" formControlName="email" >
+                    </div>
+                    <div *ngIf="newbornBookForm.get('email')?.errors &&  this.newbornBookForm.get('email')?.touched"
+                    class="text-danger " style="margin-left:8rem ;">Please Enter Valid MailId</div>
+                    <!-- address -->
+                    <div class="col-auto mt-2">
+                        <label >Address:</label>
+                      </div>
+                      <div class="col-auto mt-2"  style="width: 430px;margin-left: 33px;">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"
+                        name="address" formControlName="address" required></textarea>
+                    </div>
+                    <!-- date of event -->
+                    <div class="col-auto mt-2">
+                        <label >Date of Event:</label>
+                      </div>
+                      <div class="col-auto mt-2"  style="width: 430px;margin-left: -3px;">
+                        <input type="date"  class="form-control" name="doe" formControlName="doe">
+                    </div>
+                    <div *ngIf="newbornBookForm.get('doe')?.errors &&  this.newbornBookForm.get('doe')?.touched"
+                    class="text-danger " style="margin-left:8rem ;">Date of Event is Required</div>
+
+                    <!-- event -->
+                    <label class="mt-3">Event:</label>
+
+                   <div class="col-auto  "  style="width:430px;margin-left:120px;position: absolute;margin-top: 16rem;">
+                        <select  class="form-control"name="event" formControlName="event">
+                            <option selected hidden disabled value="">Select a Event</option>
+                           <option value="Newborn Photoshoot">Newborn Photoshoot</option>
+                           <option value="Ceremony">Ceremony</option>
+                           <option value="Birthday">Birthday</option>
+                           <!-- <option value="Black Forset Cake">Black Forset Cake</option> -->
+                        </select>
+                      </div>
+                      <div *ngIf="newbornBookForm.get('event')?.errors &&  this.newbornBookForm.get('event')?.touched"
+                    class="text-danger mt-2" style="margin-left:8rem ;">Event is Required</div>
+
+
+                    <!-- place -->
+                    <div class="mt-3">
+                      <span>Place :</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <label>
+                          <input type="radio" name="place" formControlName="place" value="Indoor">
+                          Indoor
+                        </label>
+                        &nbsp;&nbsp;
+                        <label>
+                          <input type="radio" name="place" formControlName="place" value="Outdoor">
+                          Outdoor
+                        </label>
+                        &nbsp;&nbsp;
+                        
+                  </div>
+                  <div *ngIf="newbornBookForm.get('place')?.errors &&  this.newbornBookForm.get('place')?.touched"
+                    class="text-danger " style="margin-left:8rem ;">Place is Required</div>
+                      <!-- package -->
+                      <div class="col-auto mt-2">
+                        <label >Package:</label>
+                      </div>
+                      <div class="col-auto mt-2 "  style="width: 430px;margin-left: 30px;">
+                        <input type="text"  class="form-control" name="packag" formControlName="packag">
+                    </div>
+                      <!-- <div class="col-auto mt-2 "  style="width:430px;margin-left:33px;">
+                        <select  class="form-control"name="packag" formControlName="packag">
+                            <option selected hidden disabled>Animals</option>
+                           <option value="Flowers">Flowers</option>
+                           <option value="Balloons">Balloons</option>
+                           <option value="Red Velvet Cake">Red Velvet Cake</option>
+                           <option value="Black Forset Cake">Black Forset Cake</option>
+                        </select>
+                      </div> -->
+
+                      <div *ngIf="newbornBookForm.get('packag')?.errors &&  this.newbornBookForm.get('packag')?.touched"
+                    class="text-danger " style="margin-left:8rem ;">Package is Required</div>
+
+          </div>
+            
+      
+          </form>
+    </div>
+
+    <div class="col-5">
+        <form [formGroup]="newbornBookForm"
+        class="border rounded p-5" style="background-color: rgb(188, 185, 185);">
+            <h3 class="text-center">Baby Details</h3>
+            <!-- <h5 class="text-center">Baby Name:</h5> -->
+
+            <div class="input-boxes  d-flex mt-4">
+              <div class="col-auto">
+                <label style="margin-left: 5rem;">BabyName:</label>
+              </div>
+              <div class="input-box col-auto" id="baby">
+                <input style="border:none;background-color:rgb(188, 185, 185) ;" type="text" placeholder="Enter your name"  required
+                name="babyname" formControlName="babyname" required>
+              </div>
+              </div>
+
+            <div class="row mt-5">
+        
+            <div class="col-auto">
+                <label >Father  Name:</label>
+                </div>
+                <div class="col-auto "  style="width: 240px;margin-left: 5px;">
+                <input type="text"  class="form-control" name="fname" formControlName="fname" required>
+                </div>
+
+                <!-- mother -->
+            <div class="col-auto mt-2">
+                <label >Mother Name:</label>
+                </div>
+                <div class="col-auto mt-2"  style="width: 240px;">
+                <input type="text"  class="form-control" name="mname" formControlName="mname" required>
+                </div>
+
+                <div class="mt-2">
+                  <span>Gender :</span> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  <label>
+                      <input type="radio" name="gender" formControlName="gender" value="Male">
+                      Male
+                    </label>
+                    &nbsp;&nbsp;
+                    <label>
+                      <input type="radio" name="gender" formControlName="gender" value="Female">
+                      Female
+                    </label>
+                   </div>
+                   <div *ngIf="newbornBookForm.get('gender')?.errors &&  this.newbornBookForm.get('gender')?.touched"
+                    class="text-danger " style="margin-left:8rem ;">Gender is Required</div>
+
+                <div class="col-auto mt-2">
+                    <label >DOB:</label>
+                    </div>
+                    <div class="col-auto mt-2 "  style="width: 240px;margin-left: 65px;">
+                    <input type="date"  class="form-control" name="dob" formControlName="dob">
+                    </div>
+                  </div>
+                    <div *ngIf="newbornBookForm.get('dob')?.errors &&  this.newbornBookForm.get('dob')?.touched"
+                    class="text-danger " style="margin-left:8rem ;">DOB is Required</div>
+
+           
+            
+        </form>
+    </div>
+
+   </div>
+  <!-- </div>   -->
+</div>
+    <button id="bookbtn" (click)="newbornBook()"  class="btn btn-dark">Book</button>
+</div>
+
+
+
+

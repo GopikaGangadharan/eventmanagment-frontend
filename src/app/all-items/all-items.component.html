@@ -1,0 +1,98 @@
+<div class="container mt-3">
+    <!-- <di class="row"> -->
+        <!-- <di class="col">
+            <h1>Birthday &nbsp;
+                <a routerLink="/add-items" class="btn btn-success">Add new</a>
+            </h1>
+            <p class="mt-4" style="text-align: justify;">This is dummy Data: Lorem ipsum dolor sit amet, 
+                consectetur adipisicing elit. Fugit earum non aliquid quibusdam tempora molestiae doloribus 
+                quae corrupti, sed laboriosam eos. Dolores repudiandae nam dolor quo illum? Cumque, modi dolorum.
+            </p> -->
+            <div class="row text-center ">
+        
+              <h2 class="mt-5 " style="width: 450px; margin: 10px 330px 20px; line-height: 2px;border-bottom: 1px solid black;text-align: center;">
+                <span style="background: white;padding: 0 10px;">BABY PHOTOSHOOT</span>
+              </h2>
+              <h3 class="mt-4" style="font-family: 'My Soul', cursive;font-weight: 200px;">
+              We Make The Best  MEmories Ever
+              </h3>
+              <p class="mt-5" style="text-align: justify;">This is dummy Data: Lorem ipsum dolor sit amet, 
+                consectetur adipisicing elit. Fugit earum non aliquid quibusdam tempora molestiae doloribus 
+                quae corrupti, sed laboriosam eos. Dolores repudiandae nam dolor quo illum? Cumque, modi dolorum.
+            </p>
+
+          </div>
+
+<!-- search -->
+            <div class="row mt-5">
+
+                <div class="col-lg-6 ms-5">
+                    <div>
+                        <input style="width: 480px;" type="text" [(ngModel)]="searchKey" placeholder="search theme" class="form-control mt-2">
+                    </div>
+                </div>
+                 <div class="col-4 ms-5 mt-2">
+               <h3 class="ms-5">Birthday  &nbsp;
+                   <a routerLink="/add-items" class="btn btn-dark">
+                       <i class="fa-solid fa-circle-plus"></i> Add new</a>
+               </h3>
+               </div>
+            </div>
+
+            <!-- card design -->
+            <div class="container mt-4">
+                <div class="row" >
+                    <div class="col-lg-6 mt-3" *ngFor="let additem of addBdayitems | search :searchKey:'theme' ">
+                        <!-- card -->
+                       <div class="card" >
+                           <div class="card-body" >
+                            <div class="row">
+                              <!-- divide 2parts -->
+                              <!-- 1st part image -->
+                              <div class="col-md-6">
+                                <img width="250px" height="210px" [src]="additem.image" alt="">
+                              </div>
+                              <!-- 2nd part display contact information -->
+                              <div class="col-md-6">
+                                <ul class="list-group">
+                                   <li class="list-group-item">Item Id:{{additem.id}}</li>
+                                    <li class="list-group-item">Theme:{{additem.theme}}</li>
+                                    <li class="list-group-item">Desserts:{{additem.dessert}}</li>
+                                    <li class="list-group-item">Cake:{{additem.cake}}</li>
+                                    <li class="list-group-item">Budget:{{additem.budget}}</li>
+                                </ul>
+                              </div>
+                              <!-- <div class="d-flex justify-content-evently">
+                                <button class="btn btn-dark ms-4 me-4" routerLink="/edit-items/{{additem.id}}" ><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+                                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop" ><i class="fa-solid fa-trash"></i> Delete</button>
+                             </div> -->
+                              <!-- <a class="btn btn-success me-4" routerLink="/edit-items/{{additem.id}}" style="width: 240px;">Edit</a>
+                              <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="width: 240px;">Delete</button> -->
+                            </div>
+                           </div>
+                       </div>
+
+                    </div>
+                </div>
+            </div>
+        <!-- </di> -->
+    <!-- </di> -->
+</div>
+
+
+<!-- delete item -->
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content mt-5">
+        
+        
+        <h5 class="mt-5 text-center">Are you sure to Delete this item</h5>
+
+        <div class="modal-footer mt-5">
+          <button type="button" (click)="deleteItem(item.id)"  class="btn btn-dark" >Yes</button>
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">No</button>
+        </div>
+      </div>
+    </div>
+  </div>

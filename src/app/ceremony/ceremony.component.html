@@ -1,0 +1,212 @@
+
+<!-- <div>
+    <img width="100%" src="https://weedit.photos/wp-content/uploads/2022/04/cute-and-safe-baby-photoshoot-ideas.jpg" alt="">
+</div> -->
+
+
+
+<!-- bday -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <!-- content -->
+      <h1 style="margin-top: 100px;">Welcome {{currentUser}}</h1>
+      <label class="mt-2" style="text-align: justify;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus 
+        dolores molestias nulla harum voluptatum asperiores magnam optio temporibus beatae 
+        aperiam natus, odio iusto, officia facilis repudiandae dolor quibusdam, vero excepturi.</label>
+
+        <div style="text-align: justify;" class="collapse" id="collapseExample">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi atque alias at sit 
+          sunt quas culpa rerum numquam id tempor perspiciatis placeat sed delectus, quaerat nostrum
+          accusamus minus? Delectus, ex.
+        </div>
+
+        <button (click)="collapse()" class="btn btn-dark mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample">
+          Read <span *ngIf="isCollapse">More</span>
+          <span *ngIf="!isCollapse">Less</span> </button>
+         </div>
+
+   
+
+    <div class="col-md-7 mt-5 " >
+      <!-- img -->
+      <div class="ms-2">
+<img width="300px" height="340px" src="https://i.pinimg.com/564x/7a/9d/d5/7a9dd56cf9e699b405151c1d02f62cec.jpg" alt="">
+<img width="300px" height="180px" src="https://phometo.com/images/gallery/NamingCeremony/5.jpg" alt="" class="ms-1" style="margin-top: -10rem;">
+<img width="300px" height="180px" src="https://media.istockphoto.com/id/1167481061/photo/newborn-baby-baptism-in-holy-water-baby-holding-mothers-hands-infant-bathe-in-water-baptism.jpg?s=612x612&w=0&k=20&c=CeFKcKfZJZ1lrcbCg8Cqqg2llF_2jEVH7v-6IiofPJY=" alt="" class="mt-1" >
+<img width="300px" height="340px" src="https://i.pinimg.com/474x/a4/39/2e/a4392ea3d120238999e5a3b01ef3c281.jpg" alt="" class="ms-1 " style="margin-top: -11rem;">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--  cards -->
+<div class="container mt-5">
+<div class="row mt-5">
+    
+  <div class="content text-center">
+    <h4 class="mt-5 text-center" style="width: 450px; margin: 10px 25rem 20px; line-height: 2px;border-bottom: 1px solid black;text-align: center;">
+        <span style="background: white;padding: 0 10px;">CEREMONY</span>
+      </h4>
+      <h3 class="text-center mt-4" style="font-family: 'My Soul', cursive;font-weight: 200px;">
+     Creative Baby Shoot
+      </h3>
+    </div>
+ 
+      <!--  cards -->
+
+      <div class="col-lg-4 mt-5" *ngFor="let additem of addceremonyitems">
+        <!-- card -->
+       <div class="card" >
+           <div class="card-body" >
+            <div class="row">
+              <!-- divide 2parts -->
+              <!-- 1st part image -->
+              <div class="col-md-4 ">
+                <img width="300px" height="200px" [src]="additem.image" alt="" style="margin-left: 10px;">
+              </div>
+              <!-- 2nd part display contact information -->
+              <!-- <div class="col-md-7"> -->
+                <div class="text-center">
+                  <h5 class="list-group-item">Theme:{{additem.theme}}</h5>
+                    
+                    <h6 class="list-group-item">Budget:{{additem.budget}}</h6>
+                </div>
+              <!-- </div> -->
+              <!-- <a class="btn btn-dark me-4" routerLink="/view-ceremony/{{additem.id}}" 
+              style="width: 120px;margin-left: 40px;">More Details</a> -->
+
+              <button class="btn btn-dark" routerLink="/ceremonybooking" style="width: 120px;margin-left: 7rem;">Book Now</button>
+            </div>
+           </div>
+       </div>
+      </div>
+</div>
+    </div>
+
+
+<app-footer></app-footer>
+
+
+
+
+
+
+      <!-- <div style="display: flex;flex-direction: row;gap: 30px;">
+
+
+        <div class="mt-4 border p-3" style="margin-left: 90px;">
+            <img width="220px" height="180px" src="https://fabweddings.in/blog/wp-content/uploads/2021/06/1624539449026-1024x776.jpg" alt="">
+            <h5 class="text-center mt-3">$5000</h5>
+            <button class="btn btn-dark text-light" style="margin-left: 100px;">Book</button>
+          </div>
+    
+          <div class="mt-4 border p-3">
+            <img width="220px" height="180px" src="https://img1.wsimg.com/isteam/ip/9b32cde9-8a4b-4ae1-a25b-c072a5585a43/WhatsApp%20Image%202020-02-20%20at%2014.14.29.jpeg" alt="">
+            <h5 class="text-center mt-3">$5000</h5>
+            <button class="btn btn-dark text-light" style="margin-left: 100px;">Book</button>
+          </div>
+    
+          <div class="mt-4 border p-3">
+            <img width="220px" height="180px" src="https://i.pinimg.com/originals/2a/4d/c6/2a4dc6aad74dcaca59a1c6d73016e6ef.jpg" alt="">
+            <h5 class="text-center mt-3">$5000</h5>
+            <button class="btn btn-dark text-light" style="margin-left: 100px;">Book</button>
+          </div>
+
+          <div class="mt-4 border p-3">
+            <img width="220px" height="180px" src="https://img1.wsimg.com/isteam/ip/9b32cde9-8a4b-4ae1-a25b-c072a5585a43/WhatsApp%20Image%202020-02-20%20at%2014.14.28.jpeg" alt="">
+            <h5 class="text-center mt-3">$5000</h5>
+            <button class="btn btn-dark text-light" style="margin-left: 100px;">Book</button>
+          </div>
+         
+
+      </div> -->
+
+      <!-- 2row -->
+      <!-- <div style="display: flex;flex-direction: row;gap: 30px;">
+        <div class="mt-4 border p-3" style="margin-left: 90px;">
+            <img width="220px" height="180px" src="https://i0.wp.com/decorsutrablog.com/wp-content/uploads/2020/05/Decorsutra_cradle-cermony-Decors_Inspiration-22.jpg?fit=1080%2C721&ssl=1" alt="">
+            <h5 class="text-center mt-3">$5000</h5>
+            <button class="btn btn-dark text-light" style="margin-left: 100px;">Book</button>
+          </div>
+    
+          <div class="mt-4 border p-3">
+            <img width="220px" height="180px" src="https://i0.wp.com/decorsutrablog.com/wp-content/uploads/2020/05/Decorsutra_cradle-cermony-Decors_Inspiration-19.jpg?resize=780%2C585&ssl=1" alt="">
+            <h5 class="text-center mt-3">$5000</h5>
+            <button class="btn btn-dark text-light" style="margin-left: 100px;">Book</button>
+          </div>
+    
+          <div class="mt-4 border p-3">
+            <img width="220px" height="180px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHgh1t5uhpOzNGrZZLvGg_dlZINdoTP6mt7KUDrq5WuZlSKC056IUuNAuM25fUDI-T77ilu48_M-0&usqp=CAU&ec=48665698" alt="">
+            <h5 class="text-center mt-3">$5000</h5>
+            <button class="btn btn-dark text-light" style="margin-left: 100px;">Book</button>
+          </div>
+    
+          <div class="mt-4 border p-3">
+            <img width="220px" height="180px" src="https://housing.com/news/wp-content/uploads/2022/11/image1-132.png" alt="">
+            <h5 class="text-center mt-3">$5000</h5>
+            <button class="btn btn-dark text-light" style="margin-left: 100px;">Book</button>
+          </div>
+          
+
+        </div> -->
+
+        <!-- 3rdrow -->
+        <!-- <div style="display: flex;flex-direction: row;gap: 30px;">
+
+          <div class="mt-4 border p-3" style="margin-left: 90px;">
+            <img width="220px" height="180px" src="https://deowgxgt4vwfe.cloudfront.net/uploads/1653305225_original.jpg" alt="">
+            <h5 class="text-center mt-3">$5000</h5>
+            <button class="btn btn-dark text-light" style="margin-left: 100px;">Book</button>
+          </div>
+    
+          <div class="mt-4 border p-3">
+            <img width="220px" height="180px" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61uM9jTjWwL.jpg" alt="">
+            <h5 class="text-center mt-3">$5000</h5>
+            <button class="btn btn-dark text-light" style="margin-left: 100px;">Book</button>
+          </div>
+
+          <div class="mt-4 border p-3">
+            <img width="220px" height="180px" src="https://images-cdn.ubuy.co.in/633b60c7b4807a372c1b3076-pastel-unicorn-balloon-garland.jpg" alt="">
+            <h5 class="text-center mt-3">$5000</h5>
+            <button class="btn btn-dark text-light" style="margin-left: 100px;">Book</button>
+          </div>
+
+          
+          <div class="mt-4 border p-3" >
+            <img width="220px" height="180px" src="https://makemyevents.in/wp-content/uploads/2022/01/1fdd757176e4eb68794d5013aaf5fd08.jpeg" alt="">
+            <h5 class="text-center mt-3">$5000</h5>
+    <button class="btn btn-dark text-light" style="margin-left: 100px;">Book</button>
+          </div>
+
+        </div> -->
+
+
+          
+
+        <!-- 4th row -->
+        <!-- <div style="display: flex;flex-direction: row;"> -->
+          
+    <!-- <div>
+        <img width="250px" height="180px" src="https://images.squarespace-cdn.com/content/v1/5600de0be4b097f98433e132/1665161234964-D36RRVA4LRE4VLZ55PGX/Chestermere+baby+photographer.jpg?format=1000w" alt="">
+    </div>
+
+    <div>
+        <img width="250px" height="180px" src="https://www.carinacrollaphotography.co.uk/wp-content/uploads/2022/04/newborn-photoshoot-manchester.jpg" alt="">
+      </div> -->
+
+    <!-- </div> -->
+    
+ <!-- </div> -->
+<!-- </div> -->
+
+
+
+
+ 
+
+<!-- <br>
+        
+    </div>
+</div> -->

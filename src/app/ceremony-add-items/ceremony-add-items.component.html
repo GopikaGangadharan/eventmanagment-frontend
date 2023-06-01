@@ -1,0 +1,86 @@
+
+
+<!-- add item succes msg -->
+<div *ngIf="ceremonyStatus" class="container mt-5 text-center">
+    <img width="300px" src="https://cdn.dribbble.com/users/1787505/screenshots/7300251/shot.gif" alt="">
+<h2 class="animate__animated animate__slideInUp">New Item is Inserting.... <br>
+Please Wait a Moment </h2>
+</div>
+
+
+<!-- add item page -->
+<div *ngIf="!ceremonyStatus"  class="container ">
+    <div  class="row">
+        <div class="col">
+            <!-- heading -->
+            <div class="row text-center mt-5">
+        
+                <h2 class="mt-2 " style="width: 450px; margin: 10px 330px 20px; line-height: 2px;border-bottom: 1px solid black;text-align: center;">
+                  <span style="background: white;padding: 0 10px;">CEREMONY EVENT</span>
+                </h2>
+                <h3 class="mt-3" style="font-family: 'My Soul', cursive;font-weight: 200px;">
+                We Make The Best  MEmories Ever
+                </h3>
+            </div>
+            <!-- dummy data -->
+            <p class="mt-4" style="text-align: justify;">
+                This is Dummy Data: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure
+                 quisquam voluptates minus culpa sed inventore, dolor assumenda labore cum, nisi 
+                 temporibus incidunt cupiditate aliquid ex error nostrum laboriosam aliquam. Hic.
+            </p>
+        </div>
+    </div>
+
+
+<!-- adding form design -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <!-- form design -->
+            <form [formGroup]="ceremonyForm" 
+            class="border rounded p-5"  style="background-color: rgb(188, 185, 185);">
+
+                <h5 class="mt-2 " style="width: 450px; margin: 10px 0px 20px; line-height: 2px;border-bottom: 1px solid black;text-align: center;">
+                    <span style="background: rgb(188, 185, 185);padding: 0 10px;">Add New Item</span>
+                  </h5>
+
+                <!-- id -->
+                <div class="mt-4">
+                    <input type="text" name="id" formControlName="id"  placeholder="Item id" class="form-control">
+                    <div *ngIf="this.ceremonyForm.get('id')?.errors && this.ceremonyForm.get('id')?.touched" class="text-danger mb-2">
+                        Id is Required</div>
+                </div>
+                <!-- Theme -->
+                <div class="mt-2">
+                    <input type="text" name="theme" formControlName="theme" placeholder="Theme" class="form-control">
+                    <div *ngIf="this.ceremonyForm.get('theme')?.errors && this.ceremonyForm.get('theme')?.touched" class="text-danger mb-2">
+                        Theme is Required</div>
+                </div>
+                <!-- image -->
+                <div class="mt-2">
+                    <input type="text" name="image" formControlName="image" placeholder="Image" class="form-control">
+                    <div *ngIf="this.ceremonyForm.get('image')?.errors && this.ceremonyForm.get('image')?.touched" class="text-danger mb-2">
+                        Image is Required</div>
+                </div>
+               
+                <!-- price -->
+                <div class="mt-2">
+                    <input type="text" name="budget" formControlName="budget" placeholder="Budget" class="form-control">
+                    <div *ngIf="this.ceremonyForm.get('budget')?.errors && this.ceremonyForm.get('budget')?.touched" class="text-danger mb-2">
+                        Budget is Required</div>
+                </div>
+                <!--buttonss -->
+                <div class="mt-4" style="margin-left: 7rem;">
+                    <input (click)="ceremonyAdd()" type="button" value="Add Item" class="btn btn-dark">
+                    <a class="btn btn-dark ms-5" routerLink="/ceremony-items">Cancel</a>
+                </div>
+
+            </form>
+        </div>
+        <!-- <div class="col-md-6">
+            image
+            <img [src]="bdayitem.image" alt="">
+        </div> -->
+    </div>
+</div>
+</div>

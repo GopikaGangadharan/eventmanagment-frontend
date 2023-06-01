@@ -1,0 +1,157 @@
+
+
+<!-- log out -->
+<div *ngIf="logoutStatus"
+style="width: 100%;height: 100vh;" class=" justify-content-center mt-5 text-center">
+<div class="col text-center mt-5">
+  <h1 class="mt-5 text-dark text-center">Pleas wait.... <br> while your logging out ...</h1>
+
+</div> 
+ <!-- <img src="https://open.assembly.go.kr/images/ajax_loader.gif" alt=""> -->
+  <div class="col text-center justify-content-evently mt-4">
+  <img width="250px" 
+    src="https://cdn.dribbble.com/users/1797873/screenshots/5310497/logout.gif" alt="">
+  </div>
+</div>
+
+<!--delete successMsg -->
+<div *ngIf="deleteSuccessMsg" style="width: 100%;height: 100vh;" class="d-flex justify-content-center">
+  <h1 class="mt-5 text-danger text-center">{{deleteSuccessMsg}}</h1>
+</div>
+
+<!-- delete confirm child -->
+<app-delete-confirm (onDelete)="deleteFromParent()" (onCancel)="cancelDeleteConfirm()" [deleteadminacnt]="adminacnt"></app-delete-confirm>
+
+
+<!--======== navbar============= -->
+
+<ng-container *ngIf="!deleteConfirmStatus">
+    <div *ngIf="!logoutStatus">
+
+
+<nav *ngIf="!deleteConfirmStatus" class="navbar navbar-expand-lg  bg-dark" style="z-index: 10px;">
+    <div class="container-fluid">
+      <a class="navbar-brand text-light" 
+      style="font-family: 'My Soul', cursive;margin-left: 20px;font-size: 30px;">
+      Newborn Memories</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse me-5 justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user" style="color: #f9fafb;"></i> Admin Account
+            </a>
+            <ul class="dropdown-menu border">
+              <li><a class="dropdown-item btn" (click)="deleteAccount()"><i class="fa-solid fa-trash" style="color: #00060f;"></i> Account</a></li> 
+              <li><a class="dropdown-item btn" (click)="logout()" ><i class="fa-solid fa-right-from-bracket" style="color: #01060e;"></i>logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- ============navabar end====================== -->
+
+<!-- ===========sidenvavbar =================-->
+<nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse " >
+    <div class="position-sticky ">
+       <div class="list-group list-group-flush  " style="width: 280px;"> 
+          <a  class="list-group-item list-group-item-action   text-center bg-dark text-light" >
+              <img src="https://img.freepik.com/premium-vector/cartoon-drawing-newborn-baby-character_29937-8063.jpg?w=2000" width="170px" style="margin-top: 1px;border-radius: 110px;" alt="">
+              <p class="mt-2">newbornmemory@gmail.com</p>
+              <p>newbornmemoryevent@gmail.com</p>
+            </a>
+        <a  class="list-group-item list-group-item-action text-center bg-dark " routerLink="/events"  >
+        <span class="btn text-light " style="border: none;">Events</span>
+        </a>
+        <a  class="list-group-item list-group-item-action bg-dark text-center " routerLink="/admin-dashboard"  >
+            <span class="btn text-light" style="border: none;">Admins</span>
+        </a>
+        <a  class="list-group-item list-group-item-action bg-dark text-center" routerLink="/clientdetails"  >
+            <span class="btn text-light" style="border: none;">Clients</span>
+        </a>
+        <a  class="list-group-item list-group-item-action bg-dark text-center " routerLink="/clients"  >
+            <span class="btn text-light" style="border: none;">Works</span>
+        </a>
+        
+        
+      </div> 
+
+      <!-- <div class="list-group list-group-flush  " style="width: 280px;">
+        
+            <ul class="list-group ">
+                <a  class="list-group-item list-group-item-action py-2 ripple  text-center bg-dark text-light" >
+                    <img src="https://icon-library.com/images/admin-icon/admin-icon-25.jpg" width="170px"  alt="">
+                    <p>newbornmemory@gmail.com</p>
+                    <p>newbornmemoryevent@gmail.com</p>
+                  </a>
+                <li class="list-group-item list-group-item-action bg-dark "><a class="btn text-light" style="border: none;">Events</a></li>
+                <li class="list-group-item list-group-item-action bg-dark "><a class="btn text-light" style="border: none;" routerLink=''>Clients</a></li>
+                <li class="list-group-item list-group-item-action bg-dark "><a class="btn text-light" style="border: none;">Main Dashboard</a></li>
+                <li class="list-group-item list-group-item-action bg-dark "><a class="btn text-light" style="border: none;">Main Dashboard</a></li>
+    
+            </ul>
+       
+    </div> -->
+
+    </div>
+  </nav>
+
+  <!-- ===========main-content=========== -->
+
+  <div class="heading">
+    <div>
+        <h1 >Welcome <span style="color: black;">{{currentAdmin}}</span></h1> 
+      </div>
+
+      <p>This is a Dummy Data : Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi distinctio dolor ab ad esse, blanditiis eius quasi est quaerat quia modi recusandae natus, eaque consectetur saepe commodi nesciunt, laboriosam nisi! lo</p>
+
+  </div>
+
+  <div class="content text-center">
+    <h6 class="mt-5 text-center" style="width: 450px; margin: 10px 330px 20px; line-height: 2px;border-bottom: 1px solid black;text-align: center;">
+        <span style="background: white;padding: 0 10px;">OUR EVENTS</span>
+      </h6>
+      <h4 class="text-center mt-4" style="font-family: 'My Soul', cursive;font-weight: 200px;">
+      Make Your Memories With Us
+      </h4>
+    </div>
+  
+  <div class="container" style="display:flex;margin-top: -12rem;margin-left: 25rem;gap: 3rem;">
+    
+    <div class="row">
+        <a  style="width: 250px;height: 150px;border-radius: 8px;"
+        class="list-group-item list-group-item-action bg-dark " routerLink="/newborn-items"  >
+        <!-- <span class="btn text-light " style="border:none;font-size: 30px;">Newborn</span> -->
+        <h6 class="text-center" style=" width: 200px; margin: 10px 1rem 10px; line-height: 2px;border-bottom: 1px solid white;text-align: center;margin-top: 2rem;">
+          <span class="bg-dark text-light text-center" style="padding: 0 10px;">BABY PHOTOSHOOT</span>
+        </h6>
+        </a>
+    </div>
+
+    <div class="row ">
+        <a  style="width: 250px;height: 150px;border-radius: 8px;"
+        class="list-group-item list-group-item-action bg-dark " routerLink="/ceremony-items"  >
+        <!-- <span class="btn text-light" style="border: none;">Ceremony</span> -->
+        <h6 class="text-center" style=" width: 200px; margin: 10px 1rem 10px; line-height: 2px;border-bottom: 1px solid white;text-align: center;margin-top: 2rem;">
+          <span class="bg-dark text-light text-center" style="padding: 0 10px;">CEREMONY</span>
+        </h6>
+        </a>
+    </div>
+    <div class="row ">
+        <a  style="width: 250px;height: 150px;border-radius: 8px;"
+        class="list-group-item list-group-item-action bg-dark " routerLink="/all-items"  >
+        <!-- <span class="btn text-light" style="border: none;">Birthday</span> -->
+        <h6 class="text-center" style=" width: 200px; margin: 10px 1rem 10px; line-height: 2px;border-bottom: 1px solid white;text-align: center;margin-top: 2rem;">
+          <span class="bg-dark text-light text-center" style="padding: 0 10px;">BIRTHDAY</span>
+        </h6>
+        </a>
+    
+  </div>
+  </div>
+
+</div>
+</ng-container>

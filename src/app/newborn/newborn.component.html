@@ -1,0 +1,89 @@
+<!-- <div>
+    <img width="100%" src="https://weedit.photos/wp-content/uploads/2022/04/cute-and-safe-baby-photoshoot-ideas.jpg" alt="">
+</div> -->
+
+
+
+<!-- bday -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <!-- content -->
+      <h1 style="margin-top: 100px;">Welcome {{currentUser}}</h1>
+      <label class="mt-2" style="text-align: justify;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus 
+        dolores molestias nulla harum voluptatum asperiores magnam optio temporibus beatae 
+        aperiam natus, odio iusto, officia facilis repudiandae dolor quibusdam, vero excepturi.</label>
+
+        <div style="text-align: justify;" class="collapse" id="collapseExample">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi atque alias at sit 
+          sunt quas culpa rerum numquam id tempor perspiciatis placeat sed delectus, quaerat nostrum
+          accusamus minus? Delectus, ex.
+        </div>
+
+        <button (click)="collapse()" class="btn btn-dark mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample">
+          Read <span *ngIf="isCollapse">More</span>
+          <span *ngIf="!isCollapse">Less</span> </button>
+         </div>
+
+   
+
+    <div class="col-md-7 mt-5 " >
+      <!-- img -->
+      <div class="ms-2">
+        <img height="380px" src="https://images.squarespace-cdn.com/content/v1/5a44c498fe54ef72d842266c/1571316910452-LXX4MTCC0PRHFPTOAKJ0/Newborn+baby+boy%2C+Frederick%2C+Maryland" alt="">
+      <img class="ms-1" width="290px" height="380px" src="https://i.pinimg.com/originals/49/92/8d/49928d38a35bc18c771d95287705aa9c.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--  cards -->
+<!-- <div class="container mt-5"> -->
+<div class="row mt-5">
+    
+  <div class="content text-center">
+    <h4 class="mt-5 text-center" style="width: 450px; margin: 10px 25rem 20px; line-height: 2px;border-bottom: 1px solid black;text-align: center;">
+        <span style="background: white;padding: 0 10px;">BABY SHOOT</span>
+      </h4>
+      <h3 class="text-center mt-4" style="font-family: 'My Soul', cursive;font-weight: 200px;">
+     Creative Baby Shoot
+      </h3>
+    </div>
+ 
+      <!--  cards -->
+
+<div class="container mt-5">
+  <div class="row" style="margin-left: 10px;" >
+      <div class="col-lg-3 mt-3" *ngFor="let additem of addnewbornitems">
+          <!-- card -->
+         <div class="card" >
+             <div class="card-body" >
+              <div class="row">
+                <!-- divide 2parts -->
+                <!-- 1st part image -->
+                <div class="col">
+                  <img  width="260px" height="180px" [src]="additem.image" alt="">
+                </div>
+                <!-- 2nd part display contact information -->
+                <!-- <div class="col-md-7"> -->
+                  <div class="text-center">
+                    <h5 class="list-group-item">Theme:{{additem.theme}}</h5>
+                      
+                      <h6 class="list-group-item">Budget:{{additem.budget}}</h6>
+                  </div>
+                <!-- </div> -->
+                <!-- <a class="btn btn-dark me-4" routerLink="/view-newborn/{{additem.id}}" 
+                style="width: 80px;margin-left: 50px;">More </a> -->
+
+                <button class="btn btn-dark" routerLink="/newbornbooking" style="width: 80px;margin-left: 7rem;">Book</button>
+              </div>
+             </div>
+         </div>
+
+      </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+
